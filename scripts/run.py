@@ -29,8 +29,8 @@ if __name__ == "__main__":
             num_cpu_cores=0,  # Number of CPU cores you want to use. If you run out of RAM, lower this. 0 means ALL cores.
             use_CPU_only=False,  # Set to True if you do not have an Nvidia GPU, or if you don't have enough vRAM.
             # Optional settings - Generally leave as they are.
-            slice_thickness=0.15,  # If your point cloud resolution is a bit low (and only if the stem segmentation is still reasonably accurate), try increasing this to 0.2.
-            # If your point cloud is really dense, you may get away with 0.1.
+            slice_thickness=0.2,  # If your point cloud resolution is a bit low (and only if the stem segmentation is still reasonably accurate), try increasing this to 0.2.
+            # If your point cloud is really dense, you may get away with 0.1. Default = 0.15
             slice_increment=0.05,  # The smaller this is, the better your results will be, however, this increases the run time.
             sort_stems=1,  # If you don't need the sorted stem points, turning this off speeds things up.
             # Veg sorting is required for tree height measurement, but stem sorting isn't necessary for standard use.

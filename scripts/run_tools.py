@@ -7,6 +7,7 @@ import glob
 import tkinter as tk
 import tkinter.filedialog as fd
 import os
+from datetime import datetime
 
 
 def FSCT(
@@ -25,31 +26,37 @@ def FSCT(
     print("Processing using ", parameters["num_cpu_cores"], "/", os.cpu_count(), " CPU cores.")
 
     if preprocess:
+        print(datetime.now().strftime("%H:%M:%S")) 
         preprocessing = Preprocessing(parameters)
         preprocessing.preprocess_point_cloud()
         del preprocessing
 
     if segmentation:
+        print(datetime.now().strftime("%H:%M:%S")) 
         sem_seg = SemanticSegmentation(parameters)
         sem_seg.inference()
         del sem_seg
 
     if postprocessing:
+        print(datetime.now().strftime("%H:%M:%S")) 
         object_1 = PostProcessing(parameters)
         object_1.process_point_cloud()
         del object_1
 
     if measure_plot:
+        print(datetime.now().strftime("%H:%M:%S")) 
         measure1 = MeasureTree(parameters)
         measure1.run_measurement_extraction()
         del measure1
 
     if make_report:
+        print(datetime.now().strftime("%H:%M:%S")) 
         report_writer = ReportWriter(parameters)
         report_writer.make_report()
         del report_writer
 
     if clean_up_files:
+        print(datetime.now().strftime("%H:%M:%S")) 
         report_writer = ReportWriter(parameters)
         report_writer.clean_up_files()
         del report_writer
@@ -69,6 +76,7 @@ def directory_mode():
 
 def file_mode():
     root = tk.Tk()
+    print(datetime.now().strftime("%H:%M:%S")) 
     point_clouds_to_process = fd.askopenfilenames(
         parent=root, title="Choose files", filetypes=[("LAS", "*.las"), ("LAZ", "*.laz"), ("CSV", "*.csv")]
     )
