@@ -1,4 +1,4 @@
-name: FSCT
+name: FSCTENV
 channels:
   - conda-forge
   - defaults
