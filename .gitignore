@@ -8,3 +8,4 @@ venv
 .idea
 docker
 *FSCT_output
+fsctvenv
