@@ -75,6 +75,7 @@ def directory_mode():
 
 
 def file_mode():
+    print("Running File Mode")
     root = tk.Tk()
     print(datetime.now().strftime("%H:%M:%S")) 
     point_clouds_to_process = fd.askopenfilenames(

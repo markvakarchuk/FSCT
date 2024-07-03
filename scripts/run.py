@@ -14,6 +14,7 @@ if __name__ == "__main__":
     """
     # point_clouds_to_process = directory_mode()
     # point_clouds_to_process = ['full_path_to_your_point_cloud.las', 'full_path_to_your_second_point_cloud.las', etc.]
+    print("Running run.py")
     point_clouds_to_process = file_mode()
 
     for point_cloud_filename in point_clouds_to_process:
