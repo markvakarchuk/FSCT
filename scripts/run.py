@@ -25,7 +25,7 @@ if __name__ == "__main__":
             plot_radius=0,  # If 0 m, the plot is not cropped. Otherwise, the plot is cylindrically cropped from the plot centre with plot_radius + plot_radius_buffer.
             plot_radius_buffer=0,  # See README. If non-zero, this is used for "Tree Aware Plot Cropping Mode".
             # Set these appropriately for your hardware.
-            batch_size=2,  # You will get CUDA errors if this is too high, as you will run out of VRAM. This won't be an issue if running on CPU only. Must be >= 2.
+            batch_size=18,  # You will get CUDA errors if this is too high, as you will run out of VRAM. This won't be an issue if running on CPU only. Must be >= 2.
             num_cpu_cores=0,  # Number of CPU cores you want to use. If you run out of RAM, lower this. 0 means ALL cores.
             use_CPU_only=False,  # Set to True if you do not have an Nvidia GPU, or if you don't have enough vRAM.
             # Optional settings - Generally leave as they are.
@@ -55,7 +55,7 @@ if __name__ == "__main__":
             parameters=parameters,
             # Set below to 0 or 1 (or True/False). Each step requires the previous step to have been run already.
             # For standard use, just leave them all set to 1 except "clean_up_files".
-            preprocess=1,  # Preparation for semantic segmentation.
+            preprocess=0,  # Preparation for semantic segmentation.
             segmentation=1,  # Deep learning based semantic segmentation of the point cloud.
             postprocessing=1,  # Creates the DTM and applies some simple rules to clean up the segmented point cloud.
             measure_plot=1,  # The bulk of the plot measurement happens here.
