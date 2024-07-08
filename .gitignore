@@ -9,3 +9,4 @@ venv
 docker
 *FSCT_output
 fsctvenv
+terminal_log*

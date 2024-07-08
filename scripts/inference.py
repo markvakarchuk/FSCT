@@ -52,7 +52,7 @@ def choose_most_confident_label(point_cloud, original_point_cloud):
     """
 
     print("Choosing most confident labels...")
-    neighbours = NearestNeighbors(n_neighbors=16, algorithm="kd_tree", metric="euclidean", radius=0.05).fit(
+    neighbours = NearestNeighbors(n_neighbors=16, algorithm="kd_tree", metric="euclidean", radius=0.05, n_jobs=1).fit(
         point_cloud[:, :3]
     )
     _, indices = neighbours.kneighbors(original_point_cloud[:, :3])
