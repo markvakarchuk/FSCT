@@ -33,7 +33,7 @@ if __name__ == "__main__":
             # If your point cloud is really dense, you may get away with 0.1. Default = 0.15
             slice_increment=0.05,  # The smaller this is, the better your results will be, however, this increases the run time.
             sort_stems=1,  # If you don't need the sorted stem points, turning this off speeds things up.
-            # Veg sorting is required for tree height measurement, but stem sorting isn't necessary for standard use.
+            # Veg sorting is required for tree height measurement, but stem sroting isn't necessary for standard use.
             height_percentile=100,  # If the data contains noise above the canopy, you may wish to set this to the 98th percentile of height, otherwise leave it at 100.
             tree_base_cutoff_height=5,  # A tree must have a cylinder measurement below this height above the DTM to be kept. This filters unsorted branches from being called individual trees.
             generate_output_point_cloud=1,  # Turn on if you would like a semantic and instance segmented point cloud. This mode will override the "sort_stems" setting if on.
@@ -55,9 +55,9 @@ if __name__ == "__main__":
             parameters=parameters,
             # Set below to 0 or 1 (or True/False). Each step requires the previous step to have been run already.
             # For standard use, just leave them all set to 1 except "clean_up_files".
-            preprocess=0,  # Preparation for semantic segmentation.
-            segmentation=0,  # Deep learning based semantic segmentation of the point cloud.
-            postprocessing=0,  # Creates the DTM and applies some simple rules to clean up the segmented point cloud.
+            preprocess=1,  # Preparation for semantic segmentation.
+            segmentation=1,  # Deep learning based semantic segmentation of the point cloud.
+            postprocessing=1,  # Creates the DTM and applies some simple rules to clean up the segmented point cloud.
             measure_plot=1,  # The bulk of the plot measurement happens here.
             make_report=1,  # Generates a plot report, plot map, and some other figures.
             clean_up_files=0,
